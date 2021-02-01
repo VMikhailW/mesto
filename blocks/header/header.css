@@ -1,0 +1,13 @@
+@import url(../header/__logo/header__logo.css);
+
+
+.header {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 45px 0 40px 0;
+    background-color: #000000;
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(84, 84, 84, .7);
+  }
+  

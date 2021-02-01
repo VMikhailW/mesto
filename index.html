@@ -1,11 +1,93 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./pages/index.css">
+        <title>Mesto</title>
+      </head>
+<body class="root">
+       <header class="header">
+        <img class="header__logo" src="./images/header__logo.svg" alt="логотип сайта">
+      </header>
+      <main>
+        <section class="profile"> 
+            <div class="profile__container-info"> 
+                <div class="profile__container-avatar">
+                    <img class="profile__avatar" src="images/Cousto-avatar.jpg" alt="Аватарка">
+                </div>
+                <div class="profile__biografiya">
+                    <div class="profile__info">
+                        <h1 class="profile__name">Жак-ИВ Кусто</h1>
+                         <p class="profile__caption">Исследователь океана</p>
+                    </div>
+              <button class="profile__edit-button" aria-label="редактировать профиль"></button>
+                </div>
+            </div>
+              <button class="profile__add-button" aria-label="добавить фотографии"></button>
+        </section>
+        <section class="elements">
+            <div class="element">
+              <img class="element__pic" src="images/Pic/Карачаевск.jpg" alt="Карачаевск">
+              <div class="element__description">
+                <h3 class="element__title">Карачаевск</h3>
+                <button type="button" aria-label="Лайк" class="element__like-button"></button>
+              </div>
+            </div>
+            <div class="element">
+                <img class="element__pic" src="images/Pic/Гора Эльбрус.jpg" alt="Гора Эльбрус">
+                <div class="element__description">
+                  <h3 class="element__title">Гора Эльбрус</h3>
+                  <button type="button" aria-label="Лайк" class="element__like-button"></button>
+                </div>
+              </div>
+              <div class="element">
+                <img class="element__pic" src="images/Pic/Домбай.jpg" alt="Домбай">
+                <div class="element__description">
+                  <h3 class="element__title">Домбай</h3>
+                  <button type="button" aria-label="Лайк" class="element__like-button"></button>
+                </div>
+              </div>
+              <div class="element">
+                <img class="element__pic" src="images/Pic/Гора Эльбрус.jpg" alt="Гора Эльбрус">
+                <div class="element__description">
+                  <h3 class="element__title">Гора Эльбрус</h3>
+                  <button type="button" aria-label="Лайк" class="element__like-button"></button>
+                </div>
+              </div>
+              <div class="element">
+                  <img class="element__pic" src="images/Pic/Домбай.jpg" alt="Домбай">
+                  <div class="element__description">
+                    <h3 class="element__title">Домбай</h3>
+                    <button type="button" aria-label="Лайк" class="element__like-button"></button>
+                  </div>
+                </div>
+                <div class="element">
+                  <img class="element__pic" src="images/Pic/Карачаевск.jpg" alt="Карачаевск">
+                  <div class="element__description">
+                    <h3 class="element__title">Карачаево-Ч...</h3>
+                    <button type="button" aria-label="Лайк" class="element__like-button"></button>
+                  </div>
+                </div>
+          </section>
+
+          <section class="overlay">
+            <form class="popup" name="edituser">
+                <h3 class="overlay__title"> Редактировать профиль</h3>
     
+                <fieldset class="form__fieldset"> 
+                    <input class="form__input" type="text" id="profile__title-text" aria-label="имя" placeholder="Жак-Ив Кусто" name="name" required minlength="2" maxlength="40">
+                    <input class="form__input" type="text" id="profile-caption" aria-label="подпись" placeholder="Исследователь океана" name="about" required minlength="2" maxlength="200">
+                    <button class="form__save-button" type="submit">Сохранить</button>
+                </fieldset>
+                <button class="popup__close-button" aria-label="закрыть форму"></button>
+            </form>
+          </section>
+
+       </main>
+      <footer class="footer">
+        <p class="footer__text">&copy;2021 Mesto Russia</p>
+    </footer>
+    <script src="script/index.js"></script>
 </body>
 </html>
