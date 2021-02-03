@@ -6,7 +6,12 @@ const userAbout = document.querySelector('.profile__caption');
 const form = document.forms.edituser;
 const inputName = form.elements.name;
 const inputAbout = form.elements.about;
-const button = document.querySelector('.element__like-button')
+const button = document.querySelectorAll('.element__like-button')
+button.forEach(function(btn) {
+  btn.addEventListener('click', function(e) {
+    e.target.classList.toggle("element__like-button_active")
+  })
+});
 
 function closePopup() {
   overlay.classList.remove('overlay__active');
@@ -35,6 +40,3 @@ overlay.addEventListener('click', (event) => {
   }
 });
 
-button.addEventListener('click', event => {
-  event.target.classList.toggle('element__like-button_active')
-}) 
