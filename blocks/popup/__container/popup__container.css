@@ -1,0 +1,19 @@
+
+.popup__container {
+    max-width: 430px;
+    max-height: calc(100vh - 80px);
+    position: relative;
+    padding: 195px 425px 0px 425px;
+    margin: 0;
+    outline: none;
+}
+
+
+@media screen and (max-width: 550px){
+.popup__container {
+    padding-top: 123px;
+    padding-left: 19px;
+    padding-right: 19px;
+    min-width: 282px;
+}
+}
