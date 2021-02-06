@@ -18,11 +18,9 @@
     opacity: 0;
     transition: visibility .7s,opacity .7s linear;
    }
-
-      
+ 
    .popup__active {
     visibility: visible;
     opacity: 1;
   }
 
- 
