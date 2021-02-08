@@ -4,7 +4,7 @@
 .footer {
     width: 68.75%;
 	margin: 46px auto 0;
-	padding-left: 50px;
+	padding-left: 0px;
 	padding-bottom: 30px;
 	display: flex;
 	flex-direction: row;
@@ -12,4 +12,10 @@
 	align-items: center;
 	max-width: 1200px;
 	min-width: 300px;
+}
+
+@media screen and (max-width: 424px) {
+	.footer {
+		padding-left: 9px;
+	}
 }
