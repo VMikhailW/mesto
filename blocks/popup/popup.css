@@ -3,6 +3,11 @@
 @import url(../popup/__container/popup__container.css);
 @import url(../popup/__form/popup__form.css);
 @import url(../popup/__title/popup__title.css);
+@import url(../popup/__fieldset/popup__fieldset.css);
+@import url(../popup/__input/popup__input.css);
+@import url(../popup/__save-button/popup__save-button.css);
+
+
 
 .popup {
   width: 100%;
