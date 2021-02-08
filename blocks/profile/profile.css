@@ -1,13 +1,3 @@
-@import url(../profile/__container-info/profile__container-info.css);
-@import url(../profile/__container-avatar/profile__container-avatar.css);
-@import url(../profile/__avatar/profile__avatar.css);
-@import url(../profile/__biografiya/profile__biografiya.css);
-@import url(../profile/__info/profile__info.css);
-@import url(../profile/__name/profile__name.css);
-@import url(../profile/__caption/profile__caption.css);
-@import url(../profile/__edit-button/profile__edit-button.css);
-@import url(../profile/__add-button/profile__add-button.css);
-
 .profile {
     max-width: 880px;
     margin: 0 auto;
