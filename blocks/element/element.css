@@ -1,18 +1,13 @@
 @import url(../element/__pic/element__pic.css);
 @import url(../element/__description/element__description.css);
-@import url(../element/___title/element__title.css);
+@import url(../element/__title/element__title.css);
 @import url(../element/__like-button/element__like-button.css);
-@import url(../element/__like-button/__like-button_active/element__like-button_active.css);
-
-
-
-
+@import url(../element/__like-button/_active/element__like-button_active.css);
 
 .element {
-	width: 280px;
-	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	position: relative;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
 }
-

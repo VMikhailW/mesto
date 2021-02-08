@@ -11,10 +11,10 @@
 
 .popup__btn_action_close:hover {
     opacity: 1;
-    transition: opacity .5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 550px) {
     .popup__btn_action_close {
         width: 26px;
         height: 26px;
@@ -22,4 +22,4 @@
         right: 9.18%;
         left: 82.69%;
     }
-    }
+}

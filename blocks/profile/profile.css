@@ -8,8 +8,6 @@
 @import url(../profile/__edit-button/profile__edit-button.css);
 @import url(../profile/__add-button/profile__add-button.css);
 
-
-
 .profile {
     max-width: 880px;
     margin: 0 auto;
@@ -18,19 +16,16 @@
     display: flex;
     justify-content: space-between;
     position: relative;
-  }
+}
 
+@media screen and (max-width: 1023px) {
+    .profile {
+        padding: 42px 19px 18px 19px;
+    }
+}
 
-  @media screen and (max-width: 1023px) {
+@media screen and (max-width: 699px) {
     .profile {
-      padding: 42px 19px 18px 19px;
+        flex-direction: column;
     }
-  }
-  
-  @media screen and (max-width: 699px) {
-    .profile {
-      flex-direction: column;
-    }
-  }
-  
-  
+}
