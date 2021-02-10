@@ -7,6 +7,8 @@ let form = document.forms.edituser;
 let inputName = form.elements.name;
 let inputAbout = form.elements.about;
 
+
+
 function closePopup() {
   popup.classList.remove('popup__active');
 }
@@ -27,5 +29,6 @@ form.addEventListener('submit', (event) => {
   editUserInfo();
   closePopup();
 });
+
 
 
