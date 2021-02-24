@@ -6,11 +6,3 @@
     margin: 0;
     outline: none;
 }
-
-@media screen and (max-width: 550px) {
-    .popup__container {
-        padding-top: 123px;
-        padding-left: 19px;
-        padding-right: 19px;
-    }
-}
