@@ -7,3 +7,9 @@
     grid-row-gap: 21px;
     justify-content: center;
 }
+
+@media screen and (max-width: 569px) {
+    .elements {
+        margin: 36px auto 0;
+    }
+}

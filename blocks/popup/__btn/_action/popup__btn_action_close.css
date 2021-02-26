@@ -18,8 +18,9 @@
     .popup__btn_action_close {
         width: 26px;
         height: 26px;
-        top: 91px;
+        top: -6px;
         right: 9.18%;
         left: 82.69%;
+        transform: translate(100%, -100%);
     }
 }
