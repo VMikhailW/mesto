@@ -27,13 +27,13 @@ function handlePopupEditSubmit(evt) {
 }
 
 function openPopup () {
-  popup.classList.add('popup__active');
+  popup.classList.add('popup_active');
 } 
 openButton.addEventListener('click' , openPopup); 
 
 
 function closePopup() {
-  popup.classList.remove('popup__active');
+  popup.classList.remove('popup_active');
 }
 
 closeButton.addEventListener('click', closePopup);
