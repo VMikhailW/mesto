@@ -12,10 +12,8 @@ let aboutInput = formEditProfile.querySelector("#about-input")
 
 
 function handlePopupEditOpen() {
-  openPopup(popupEdit)
   nameInput.value = nameProfile.textContent
   aboutInput.value = aboutProfile.textContent
-  
 }
 
 function handlePopupEditSubmit(evt) {
