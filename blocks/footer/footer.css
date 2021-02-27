@@ -1,8 +1,8 @@
 .footer {
     width: 68.75%;
     margin: 46px auto 0;
-    padding-left: 0px;
-    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
