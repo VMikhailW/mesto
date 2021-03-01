@@ -20,7 +20,7 @@ function handlePopupEditSubmit(evt) {
   evt.preventDefault()
   nameProfile.textContent = nameInput.value
   aboutProfile.textContent = aboutInput.value
-  closePopup(popupEdit)
+  closePopup()
 
 }
 
@@ -33,6 +33,7 @@ openButton.addEventListener('click' , openPopup);
 function closePopup() {
   popup.classList.remove('popup_active');
 }
+
 
 closeButton.addEventListener('click', closePopup);
 editProfile.addEventListener("click", handlePopupEditOpen)
