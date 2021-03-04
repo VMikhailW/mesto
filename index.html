@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="shortcut icon" href="#" />
         <link rel="stylesheet" href="./pages/index.css" />
         <title>Mesto</title>
     </head>
-
     <body class="root">
         <header class="header">
             <img class="header__logo" src="./images/header__logo.svg" alt="логотип сайта" />
@@ -25,19 +25,17 @@
                 </div>
                 <button type="button" class="profile__add-button" aria-label="добавить фотографии"></button>
             </section>
-
             <section class="elements">
                 <ul class="elements__list"></ul>
             </section>
-
-            <article class="popup popup_type_edit" >
+            <article class="popup popup_type_edit">
                 <div class="popup__container">
-                    <button class="popup__btn popup__btn_action_close"  type="button" aria-label="закрыть форму"></button>
+                    <button class="popup__btn popup__btn_action_close" type="button" aria-label="закрыть форму"></button>
                     <form class="popup__form" name="edit-user">
                         <h2 class="popup__title">Редактировать профиль</h2>
                         <fieldset class="popup__fieldset">
                             <input type="text" placeholder="Имя" id="name-input" class="popup__input" name="name" required minlength="2" maxlength="40" />
-                            <input type="text" placeholder="О себе" id="about-input" class="popup__input" name="about" required minlength="2" maxlength="200">
+                            <input type="text" placeholder="О себе" id="about-input" class="popup__input" name="about" required minlength="2" maxlength="200" />
                             <button class="popup__save-button" type="submit">Сохранить</button>
                         </fieldset>
                     </form>
@@ -45,36 +43,33 @@
             </article>
             <article class="popup popup_type_new-card">
                 <div class="popup__container">
-                    <button class="popup__btn popup__btn_action_close"  type="button" aria-label="закрыть форму"></button>
+                    <button class="popup__btn popup__btn_action_close" type="button" aria-label="закрыть форму"></button>
                     <form class="popup__form" name="new-card" novalidate>
                         <h2 class="popup__title">Новое место</h2>
                         <fieldset class="popup__fieldset">
                             <input type="text" placeholder="Название" id="place-input" class="popup__input" name="place" required minlength="2" maxlength="40" />
-                            <input type="url" placeholder="Ссылка на картинку" id="img-input" class="popup__input" name="img" required minlength="2" maxlength="200">
+                            <input type="url" placeholder="Ссылка на картинку" id="img-input" class="popup__input" name="img" required minlength="2" maxlength="200" />
                             <button class="popup__save-button" type="submit">Создать</button>
                         </fieldset>
                     </form>
                 </div>
             </article>
-
-        <section class="popup popup_type_image">
-            <div class="popup__container popup__container_type_image">
-                <figure class="popup__figure">
-                    <img src="#" alt="место" class="popup__image">
-                    <figcaption class="popup__figcaption"></figcaption>
-                </figure>    
-                <button class="popup__btn popup__btn_action_close" type="button"></button>
-            </div>
-        </section>
-
+            <section class="popup popup_type_image">
+                <div class="popup__container popup__container_type_image">
+                    <figure class="popup__figure">
+                        <img src="#" alt="место" class="popup__image" />
+                        <figcaption class="popup__figcaption"></figcaption>
+                    </figure>
+                    <button class="popup__btn popup__btn_action_close" type="button"></button>
+                </div>
+            </section>
         </main>
         <footer class="footer">
             <p class="footer__text">Ω2021 Mesto Russia</p>
         </footer>
-
         <template class="card_template">
             <li class="element">
-                <img src="#" alt="картинка" class="element__pic">
+                <img src="#" alt="картинка" class="element__pic" />
                 <div class="element__description">
                     <h2 class="element__title"></h2>
                     <button class="element__like-button" type="button"></button>
@@ -82,7 +77,6 @@
                 <button class="element__delete" type="button"></button>
             </li>
         </template>
-
         <script src="scripts/index.js"></script>
     </body>
 </html>
