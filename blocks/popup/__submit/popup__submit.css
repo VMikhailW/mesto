@@ -1,4 +1,4 @@
-.form__submit {
+.popup__submit {
     padding: 0;
     margin-top: 45px;
     font-size: 14px;
@@ -11,18 +11,18 @@
     cursor: pointer;
 }
 
-.form__submit:hover {
+.popup__submit:hover {
     background: rgba(0, 0, 0, 0.8);
 }
 
-.form__submit:active,
-.form__submit:focus {
+.popup__submit:active,
+.popup__submit:focus {
     border-color: #000;
     outline: none;
 }
 
 @media (min-width: 768px) {
-    .form__submit {
+    .popup__submit {
         font-size: 18px;
         margin-top: 50px;
         height: 50px;

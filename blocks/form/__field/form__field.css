@@ -1,8 +1,0 @@
-.form__field {
-    position: relative;
-    display: block;
-}
-
-.form__field:not(:first-child) {
-    margin-top: 30px;
-}

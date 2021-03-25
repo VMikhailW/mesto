@@ -6,13 +6,13 @@ const aboutProfile = document.querySelector(".profile__caption")
 
 const editProfile = document.querySelector(".profile__edit-button")
 const popupEdit = document.querySelector(".popup_type_edit")
-const formEditProfile = popupEdit.querySelector(".form")
+const formEditProfile = popupEdit.querySelector(".popup__form")
 const nameInput = formEditProfile.querySelector("#name-input")
 const aboutInput = formEditProfile.querySelector("#about-input")
 
 const placeButtonAdd = document.querySelector(".profile__add-button")
 const popupNewCard = document.querySelector(".popup_type_new-card")
-const formNewCard = popupNewCard.querySelector(".form")
+const formNewCard = popupNewCard.querySelector(".popup__form")
 const placeInput = formNewCard.querySelector("#place-input")
 const imgInput = formNewCard.querySelector("#img-input")
 
