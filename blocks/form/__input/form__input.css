@@ -1,0 +1,20 @@
+.form__input {
+    border: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+    line-height: 1.2;
+    width: 100%;
+    padding: 13px 0;
+    transition: .2s ease-in-out;
+    transition-property: border;
+}
+
+.form__input:active,
+.form__input:focus {
+    outline: none;
+}
+
+.form__input:active:not(.form__input_type_error),
+.form__input:focus:not(.form__input_type_error) {
+    border-color: #000;
+}

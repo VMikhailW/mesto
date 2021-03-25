@@ -98,9 +98,18 @@ function handlePopupNewCardSubmit(evt) {
 
 }
 
+//Закрытие модальных окон
 function closePopup(popup) {
   popup.classList.remove("popup_active")
+  document.removeEventListener('keydown', handleEscUp)
+}
 
+//Закрытие модалки на Esc
+function handleEscUp(evt) {
+  const activePopup = document.querySelector('.popup_active')
+  if (evt.key === 'Escape') {
+      closePopup(activePopup)
+  }
 }
 
 popups.forEach((item) => {
@@ -113,7 +122,7 @@ popups.forEach((item) => {
 
 function openPopup(popup) {
   popup.classList.add("popup_active")
-  
+  document.addEventListener('keydown', handleEscUp)
 }
 
 editProfile.addEventListener("click", handlePopupEditOpen)
