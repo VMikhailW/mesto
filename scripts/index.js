@@ -1,5 +1,6 @@
 const popups = document.querySelectorAll(".popup");
 
+
 const nameProfile = document.querySelector(".profile__name")
 const aboutProfile = document.querySelector(".profile__caption")
 
@@ -99,11 +100,14 @@ function handlePopupNewCardSubmit(evt) {
 
 }
 
+
+
 //Закрытие модальных окон
 function closePopup(popup) {
   popup.classList.remove("popup_active")
   document.removeEventListener('keydown', handleEscUp)
 }
+
 
 //Закрытие модалки на Esc
 function handleEscUp(evt) {
@@ -116,17 +120,31 @@ function handleEscUp(evt) {
 popups.forEach((item) => {
   item.addEventListener("click", (evt) => {
       if (evt.target.classList.contains("popup") || evt.target.classList.contains("popup__btn_action_close")) {
+        
           closePopup(item)
           
       }
   })
 })
 
+//Кнопка сабмита в попапе добавления карточки
+const submitButtonAddForm = formNewCard.querySelector('.popup__submit'); 
+
+//Функция деактивации кнопки сабмита в попапе добавления карточки
+const handleAddFormButtonState = () => {
+  submitButtonAddForm.classList.add('popup__submit_inactive');
+  submitButtonAddForm.disabled = true;
+};
+
+
 function openPopup(popup) {
+  
   popup.classList.add("popup_active")
   document.addEventListener('keydown', handleEscUp)
+  handleAddFormButtonState();
   
 }
+
 
 editProfile.addEventListener("click", handlePopupEditOpen)
 formEditProfile.addEventListener("submit", handlePopupEditSubmit)
