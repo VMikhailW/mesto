@@ -30,15 +30,6 @@ const hasInvalidInput = (inputList) => {
     })
 }
 
-//Меняем кнопку
-const toggleButtonState = (inputList, buttonElement, settings) => {
-     buttonElement.disabled = true; 
-    if (hasInvalidInput(inputList)) {
-        buttonElement.classList.add(settings.inactiveButtonClass)
-    } else {
-        buttonElement.classList.remove(settings.inactiveButtonClass)
-    }
-}
 
 //Поиск полей и кнопки
 const setEventListeners = (formElement, settings) => {
@@ -61,6 +52,19 @@ const enableValidation = (settings) => {
     formList.forEach((formElement) => {
         setEventListeners(formElement, settings)
     })
+}
+
+//Меняем кнопку
+const toggleButtonState = (inputList, buttonElement, settings) => {
+    
+    if (hasInvalidInput(inputList)) {
+        buttonElement.classList.add(settings.inactiveButtonClass)
+        buttonElement.disabled = true;
+    } else {
+        buttonElement.classList.remove(settings.inactiveButtonClass)
+        buttonElement.disabled = false;
+    }
+   
 }
 
 enableValidation({

@@ -75,6 +75,8 @@ function handlePopupEditOpen() {
   openPopup(popupEdit)
   nameInput.value = nameProfile.textContent
   aboutInput.value = aboutProfile.textContent
+ 
+  
 }
 //Редактирование окна
 function handlePopupEditSubmit(evt) {
@@ -87,6 +89,7 @@ function handlePopupEditSubmit(evt) {
 function handlePopupNewCardOpen() {
   openPopup(popupNewCard)
   formNewCard.reset()
+  
 }
 //Добавление карточек
 function handlePopupNewCardSubmit(evt) {
@@ -114,6 +117,7 @@ popups.forEach((item) => {
   item.addEventListener("click", (evt) => {
       if (evt.target.classList.contains("popup") || evt.target.classList.contains("popup__btn_action_close")) {
           closePopup(item)
+          
       }
   })
 })
@@ -121,6 +125,7 @@ popups.forEach((item) => {
 function openPopup(popup) {
   popup.classList.add("popup_active")
   document.addEventListener('keydown', handleEscUp)
+  
 }
 
 editProfile.addEventListener("click", handlePopupEditOpen)
