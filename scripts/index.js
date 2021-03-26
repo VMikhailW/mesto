@@ -1,5 +1,4 @@
 const popups = document.querySelectorAll(".popup");
-const closeButton = document.querySelectorAll(".popup__btn_action_close");
 
 const nameProfile = document.querySelector(".profile__name")
 const aboutProfile = document.querySelector(".profile__caption")
@@ -51,15 +50,15 @@ function createCard(name, link) {
   return cardElement
 }
 //Лайк карточки
-function handleLikePlace(evt) {
-  evt.querySelector(".element__like-button").addEventListener("click", (evt) => {
-      evt.target.classList.toggle("element__like-button_active")
+function handleLikePlace(cardElement) {
+  cardElement.querySelector(".element__like-button").addEventListener("click", (cardElement) => {
+    cardElement.target.classList.toggle("element__like-button_active")
   })
 }
 //Удаление карточки
-function handleDeletePlace(evt) {
-  evt.querySelector(".element__delete").addEventListener("click", (evt) => {
-      evt.target.closest(".element").remove()
+function handleDeletePlace(cardElement) {
+  cardElement.querySelector(".element__delete").addEventListener("click", (cardElement) => {
+    cardElement.target.closest(".element").remove()
   })
 }
 //Открываем изображение в модалке
@@ -88,7 +87,6 @@ function handlePopupEditSubmit(evt) {
 function handlePopupNewCardOpen() {
   openPopup(popupNewCard)
   formNewCard.reset()
-  
 }
 //Добавление карточек
 function handlePopupNewCardSubmit(evt) {
@@ -106,8 +104,8 @@ function closePopup(popup) {
 
 //Закрытие модалки на Esc
 function handleEscUp(evt) {
-  const activePopup = document.querySelector('.popup_active')
   if (evt.key === 'Escape') {
+    const activePopup = document.querySelector('.popup_active')
       closePopup(activePopup)
   }
 }
@@ -126,6 +124,6 @@ function openPopup(popup) {
 }
 
 editProfile.addEventListener("click", handlePopupEditOpen)
-placeButtonAdd.addEventListener("click", handlePopupNewCardOpen)
 formEditProfile.addEventListener("submit", handlePopupEditSubmit)
+placeButtonAdd.addEventListener("click", handlePopupNewCardOpen)
 formNewCard.addEventListener("submit", handlePopupNewCardSubmit)
