@@ -25,3 +25,4 @@
 * File Structure and File Paths (Nested BEM)
 * Git
 * JavaScript
+* Валидация форм
