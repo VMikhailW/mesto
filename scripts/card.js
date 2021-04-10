@@ -1,4 +1,4 @@
-import { popupImage, figcaption, openPopup, closePopup } from './index.js'
+import { popupCard, popupImage, figcaption, openPopup, closePopup } from './constants.js'
 export default class Card {
     constructor(name, link, cardSelector) {
         this._title = name
