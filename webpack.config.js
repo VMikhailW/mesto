@@ -1,27 +1,24 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/scripts/index.js',
     target: 'es5',
     output: {
-        path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [{
                 test: /\.m?js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
-
+                    loader: 'babel-loader'
                 }
             }, {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader,
-                    {
+                use: [MiniCssExtractPlugin.loader, {
                         loader: "css-loader",
                         options: {
                             importLoaders: 1,
@@ -31,7 +28,7 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2)$/i,
+                test: /\.(png|jpe?g|gif|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/i,
                 use: [{
                     loader: 'file-loader',
                     options: {
@@ -43,8 +40,8 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: './src/index.html'
-        }), new MiniCssExtractPlugin(),
-        new CleanWebpackPlugin(),
+            template: 'src/index.html'
+        }),
+        new MiniCssExtractPlugin()
     ],
 };

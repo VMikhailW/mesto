@@ -1,9 +1,10 @@
-import Card from './card.js'
-import Section from './Section.js'
-import UserInfo from './UserInfo.js'
-import PopupWithImage from './PopupWithImage.js'
-import PopupWithForm from './PopupWithForm.js'
-import FormValidator from './FormValidator.js'
+import '../pages/index.css';
+import Card from './components/Card.js'
+import Section from './components/Section.js'
+import UserInfo from './components/UserInfo.js'
+import PopupWithImage from './components/PopupWithImage.js'
+import PopupWithForm from './components/PopupWithForm.js'
+import FormValidator from './components/FormValidator.js'
 import initialCards from './cards.js'
 import {
     editProfile,
@@ -14,9 +15,9 @@ import {
     formNewCard,
     formSetting
 } from './utils.js';
-import '../pages/index.css'
 
-//Создание карточки1
+
+
 const createCard = (name, link) => {
     const card = new Card({
         name: name,
@@ -27,7 +28,6 @@ const createCard = (name, link) => {
     }, '.card_template')
     return card.generateCard()
 }
-
 
 const cardList = new Section({
     items: initialCards,
@@ -43,7 +43,6 @@ cardList.renderItems()
 const popupWithImage = new PopupWithImage('.popup_type_image')
 popupWithImage.setEventListeners()
 
-
 const userInfo = new UserInfo('.profile__name', '.profile__caption')
 const popupUserForm = new PopupWithForm('.popup_type_edit', {
     formSubmit: (data) => {
@@ -51,12 +50,13 @@ const popupUserForm = new PopupWithForm('.popup_type_edit', {
     }
 })
 popupUserForm.setEventListeners()
-const handlePopupEditOpen = () => {
+const handlePopupEditProfile = () => {
     const userData = userInfo.getUserInfo()
     nameInput.value = userData.name
     aboutInput.value = userData.about
     popupUserForm.open()
 }
+
 const popupCardForm = new PopupWithForm('.popup_type_new-card', {
     formSubmit: (data) => {
         const cardElement = createCard(data.place, data.img)
@@ -64,7 +64,7 @@ const popupCardForm = new PopupWithForm('.popup_type_new-card', {
     }
 })
 popupCardForm.setEventListeners()
-const handlePopupNewCardOpen = () => {
+const handlePopupNewCard = () => {
     popupCardForm.open()
 }
 
@@ -76,5 +76,5 @@ const cardFormValidator = new FormValidator(formSetting, formNewCard)
 cardFormValidator.enableValidation()
 
 
-editProfile.addEventListener("click", handlePopupEditOpen)
-placeButtonAdd.addEventListener("click", handlePopupNewCardOpen)
+placeButtonAdd.addEventListener("click", handlePopupNewCard)
+editProfile.addEventListener("click", handlePopupEditProfile)

@@ -1,39 +1,29 @@
 {
-    "name": "yandex_praktikum",
-    "version": "0.0.1",
+    "name": "mesto",
+    "version": "1.0.0",
     "description": "\"Mesto\" - это интерактивная страница, в работе применены расширенные возможности HTML и CSS, JavaScript",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "rimraf dist && webpack --mode production",
+        "build": "rd /s /q dist && webpack --mode production",
         "dev": "webpack serve --mode development"
     },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/VMikhailW/mesto.git"
-    },
-    "author": "Volokitin Mikhail",
+    "author": "",
     "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/VMikhailW/mesto/issues"
-    },
-    "homepage": "https://github.com/VMikhailW/mesto#readme",
-    "dependencies": {},
     "devDependencies": {
-        "@babel/core": "^7.13.15",
-        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/core": "^7.13.16",
         "@babel/preset-env": "^7.13.15",
         "autoprefixer": "^10.2.5",
         "babel-loader": "^8.2.2",
-        "clean-webpack-plugin": "^4.0.0-alpha.0",
-        "css-loader": "^5.2.2",
+        "css-loader": "^5.2.4",
+        "css-minimizer-webpack-plugin": "^2.0.0",
         "cssnano": "^5.0.1",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.3.1",
         "mini-css-extract-plugin": "^1.5.0",
         "postcss": "^8.2.10",
         "postcss-loader": "^5.2.0",
-        "webpack": "^5.33.2",
+        "webpack": "^5.34.0",
         "webpack-cli": "^4.6.0",
         "webpack-dev-server": "^3.11.2"
     }
