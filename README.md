@@ -26,3 +26,5 @@
 * Git
 * JavaScript
 * Валидация форм
+* ООП JavaScript
+* WebPack
