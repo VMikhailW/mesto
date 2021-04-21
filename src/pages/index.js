@@ -1,11 +1,11 @@
-import '../pages/index.css';
-import Card from './components/Card.js'
-import Section from './components/Section.js'
-import UserInfo from './components/UserInfo.js'
-import PopupWithImage from './components/PopupWithImage.js'
-import PopupWithForm from './components/PopupWithForm.js'
-import FormValidator from './components/FormValidator.js'
-import initialCards from './cards.js'
+import '../pages/index.css'
+import Card from '../components/Card.js'
+import Section from '../components/Section.js'
+import UserInfo from '../components/UserInfo.js'
+import PopupWithImage from '../components/PopupWithImage.js'
+import PopupWithForm from '../components/PopupWithForm.js'
+import FormValidator from '../components/FormValidator.js'
+import initialCards from '../utils/cards.js'
 import {
     editProfile,
     placeButtonAdd,
@@ -14,7 +14,7 @@ import {
     aboutInput,
     formNewCard,
     formSetting
-} from './utils.js';
+} from '../utils/utils.js';
 
 
 
