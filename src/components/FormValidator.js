@@ -7,6 +7,7 @@ export default class FormValidator {
         this._inputErrorClass = settings.inputErrorClass
         this._errorClass = settings.errorClass
     }
+
     enableValidation() {
         this.toggleButtonState()
         this._setEventListeners()
@@ -20,6 +21,12 @@ export default class FormValidator {
             this._button.removeAttribute('disabled', 'disabled')
         }
     }
+
+    disableButton() {
+        this._button.classList.add(this._buttonInactive)
+        this._button.setAttribute('disabled', 'disabled')
+    }
+
     _hasInvalidInput() {
         return this._inputList.some((inputElement) => {
             return !inputElement.validity.valid
@@ -32,6 +39,7 @@ export default class FormValidator {
             this._hideInputError(inputElement)
         }
     }
+
     _showInputError(inputElement) {
         const errorElement = this._form.querySelector(`.${inputElement.id}-error`)
         inputElement.classList.add(this._inputErrorClass)
@@ -52,4 +60,5 @@ export default class FormValidator {
             })
         })
     }
+
 }

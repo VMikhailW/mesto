@@ -55,18 +55,24 @@ const handlePopupEditProfile = () => {
     nameInput.value = userData.name
     aboutInput.value = userData.about
     popupUserForm.open()
+
 }
 
 const popupCardForm = new PopupWithForm('.popup_type_new-card', {
     formSubmit: (data) => {
         const cardElement = createCard(data.place, data.img)
         cardList.addItem(cardElement)
+        cardFormValidator.disableButton()
+        popupCardForm.close()
+
     }
 })
 popupCardForm.setEventListeners()
 const handlePopupNewCard = () => {
     popupCardForm.open()
+
 }
+
 
 
 const profileFormValidator = new FormValidator(formSetting, formEditProfile)
@@ -76,5 +82,5 @@ const cardFormValidator = new FormValidator(formSetting, formNewCard)
 cardFormValidator.enableValidation()
 
 
-placeButtonAdd.addEventListener("click", handlePopupNewCard)
 editProfile.addEventListener("click", handlePopupEditProfile)
+placeButtonAdd.addEventListener("click", handlePopupNewCard)
