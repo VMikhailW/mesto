@@ -1,30 +1,26 @@
 .popup__submit {
-    padding: 0;
-    margin-top: 45px;
-    font-size: 14px;
-    border: 0;
-    background: #000000;
-    border-radius: 2px;
-    height: 46px;
-    color: #fff;
+    max-width: 100%;
     width: 100%;
-    cursor: pointer;
+    min-height: 50.2px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    text-align: center;
+    background-color: #000000;
+    border: none;
+    border-radius: 2px;
+    transition: background-color 0.3s ease-in;
 }
 
 .popup__submit:hover {
-    background: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.popup__submit:active,
-.popup__submit:focus {
-    border-color: #000;
-    outline: none;
-}
-
-@media (min-width: 768px) {
+@media screen and (max-width: 450px){
     .popup__submit {
-        font-size: 18px;
-        margin-top: 50px;
-        height: 50px;
+        min-height: 40px;
+        font-size: 14px;
+        line-height: 1.21;
     }
 }

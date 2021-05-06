@@ -1,30 +1,34 @@
 {
     "name": "mesto",
-    "version": "1.0.0",
-    "description": "\"Mesto\" - это интерактивная страница, в работе применены расширенные возможности HTML и CSS, JavaScript",
+    "version": "0.0.2",
+    "description": "### Обзор   https://vmikhailw.github.io/mesto/index.html",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "rd /s /q dist && webpack --mode production",
+        "build": "rd / s / q dist && webpack --mode production",
         "dev": "webpack serve --mode development"
+
     },
     "author": "",
     "license": "ISC",
     "devDependencies": {
-        "@babel/core": "^7.13.16",
-        "@babel/preset-env": "^7.13.15",
+        "@babel/core": "^7.14.0",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/preset-env": "^7.14.1",
         "autoprefixer": "^10.2.5",
         "babel-loader": "^8.2.2",
         "css-loader": "^5.2.4",
-        "css-minimizer-webpack-plugin": "^2.0.0",
-        "cssnano": "^5.0.1",
+        "cssnano": "^5.0.2",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.3.1",
-        "mini-css-extract-plugin": "^1.5.0",
-        "postcss": "^8.2.10",
+        "mini-css-extract-plugin": "^1.6.0",
+        "postcss": "^8.2.14",
         "postcss-loader": "^5.2.0",
-        "webpack": "^5.35.0",
+        "webpack": "^5.36.2",
         "webpack-cli": "^4.6.0",
         "webpack-dev-server": "^3.11.2"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.12.1"
     }
 }

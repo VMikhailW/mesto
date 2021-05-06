@@ -1,22 +1,27 @@
+@import url('./__cover/profile__cover.css');
+@import url('./__avatar/profile__avatar.css');
+@import url('./__info/profile__info.css');
+@import url('./__position/profile__position.css');
+@import url('./__title/profile__title.css');
+@import url('./__subtitle/profile__subtitle.css');
+@import url('./__button/profile__button.css');
+
 .profile {
-    max-width: 880px;
-    margin: 0 auto;
-    padding: 40px 0 25px 0;
-    background-color: #000000;
     display: flex;
     justify-content: space-between;
-    position: relative;
+    align-items: center;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 930px){
     .profile {
-        padding: 42px 19px 18px 19px;
+        padding: 0 19px;
     }
 }
 
-@media screen and (max-width: 699px) {
+@media screen and (max-width: 700px){
     .profile {
         flex-direction: column;
-        padding: 42px 19px 0 19px;
     }
 }
