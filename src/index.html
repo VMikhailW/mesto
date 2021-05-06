@@ -44,7 +44,7 @@
             <div class="popup__container">
                 <button class="button popup__close opacity" type="button"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form form_type_edit" action="#" name="redact" novalidate>
+                <form class="popup__form popup_type_edit" action="#" name="redact" novalidate>
                     <div class="popup__cover">
                         <label class="popup__control">
                             <input class="popup__input popup__input_type_name" type="text" name="name" minlength="2" maxlength="20" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
@@ -64,7 +64,7 @@
             <div class="popup__container">
                 <button class="button popup__close opacity" type="button"></button>
                 <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form form_type_add" action="#" name="new-place" novalidate>
+                <form class="popup__form popup_type_add" action="#" name="new-place" novalidate>
                     <div class="popup__cover">
                         <label class="popup__control">
                             <input class="popup__input popup__input_type_title" type="text" name="name" placeholder="Название" minlength="1" maxlength="30" pattern="^[A-Za-zА-Яа-яЁё\s\D]+$" required>
@@ -94,7 +94,7 @@
             <div class="popup__container">
                 <button class="button popup__close opacity" type="button"></button>
                 <h2 class="popup__title">Вы уверены?</h2>
-                <form class="popup__form form_type_prevent" action="#" name="prevent-form" novalidate>
+                <form class="popup__form popup_type_prevent" action="#" name="prevent-form" novalidate>
                     <input class="button popup__submit" type="submit" value="Да" name="submit">
                 </form>
             </div>
@@ -104,7 +104,7 @@
             <div class="popup__container">
                 <button class="button popup__close opacity" type="button"></button>
                 <h2 class="popup__title">Обновить аватар</h2>
-                <form class="popup__form form_type_avatar" action="#" name="avatar-form" novalidate>
+                <form class="popup__form popup_type_avatar" action="#" name="avatar-form" novalidate>
                     <div class="popup__cover popup__cover_type_avatar">
                         <label class="popup__control">
                             <input class="popup__input popup__input_type_avatar" type="url" name="avatar" placeholder="Ссылка на картинку" required>
