@@ -1,27 +1,36 @@
-@import url('./__cover/profile__cover.css');
-@import url('./__avatar/profile__avatar.css');
-@import url('./__info/profile__info.css');
-@import url('./__position/profile__position.css');
-@import url('./__title/profile__title.css');
-@import url('./__subtitle/profile__subtitle.css');
-@import url('./__button/profile__button.css');
+
+@import url(./__description/profile__description.css);
+@import url(./__avatar/profile__avatar.css);
+@import url(./__image/profile__image.css);
+
+@import url(./__name/profile__name.css);
+@import url(./__work/profile__work.css);
+
+@import url(./__btn/profile__btn.css);
+@import url(./__btn/_action/profile__btn_action_edit.css);
+@import url(./__btn/_action/profile__btn_action_add.css);
 
 .profile {
-    display: flex;
-    justify-content: space-between;
+  max-width: 882px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  padding: 0;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 900px) {
+  .profile {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .profile {
+    flex-direction: column;
     align-items: center;
-    box-sizing: border-box;
-    text-overflow: ellipsis;
-}
-
-@media screen and (max-width: 930px){
-    .profile {
-        padding: 0 19px;
-    }
-}
-
-@media screen and (max-width: 700px){
-    .profile {
-        flex-direction: column;
-    }
+  }
 }

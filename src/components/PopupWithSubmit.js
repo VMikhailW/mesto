@@ -1,20 +1,26 @@
-import Popup from './Popup.js';
+//--------------------------------------------------------------------------------------
+// Модуль PopupWithSubmit.js
+// Класс PopupWithSubmit
+//--------------------------------------------------------------------------------------
+
+import Popup from "./Popup.js";
 
 export default class PopupWithSubmit extends Popup {
-    constructor(popupSelector) {
-        super(popupSelector);
-        this._form = this._popup.querySelector('.popup__form');
-    }
+  constructor (selector, classes, submitHandler) {
+    super(selector, classes);
+    this._submitHandler = submitHandler;
+  }
 
-    setFormSubmitHandler(handler) {
-        this.setFormSubmitHandler = handler;
-    }
+  setEventListeners() {
+    super.setEventListeners();
+    this._popup.addEventListener('submit', (evt) => {
+      evt.preventDefault();
+      this._submitHandler(this._element); 
+    });
+  }
 
-    setEventListeners() {
-        super.setEventListeners();
-        this._form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            this.setFormSubmitHandler();
-        });
-    }
+  open(card) {
+    this._element = card;
+    super.open();
+  }
 }

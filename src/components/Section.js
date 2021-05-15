@@ -1,16 +1,23 @@
-import Api from "./Api";
+//--------------------------------------------------------------------------------------
+// Модуль Section.js
+// Класс Section
+//--------------------------------------------------------------------------------------
 
 export default class Section {
-    constructor({ renderer }, containerSelector) {
-        this._renderer = renderer;
-        this._container = document.querySelector(containerSelector);
-    }
+  constructor ({ items, renderer }, containerSelector) {
+    this._items = items;
+    this._renderer = renderer;
+    this._container = document.querySelector(containerSelector);
+  }
 
-    renderItems(items) {
-        items.reverse().forEach(item => this._renderer(item));
-    }
+  addItem(element) {
+    this._container.prepend(element);
+  }
 
-    addInitialItem(element) {
-        this._container.prepend(element);
-    }
+  renderItems() {
+    this._items.forEach(item => {
+      this._renderer(item);
+    });
+  }
 }
+

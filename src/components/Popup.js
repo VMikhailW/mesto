@@ -1,33 +1,38 @@
+//--------------------------------------------------------------------------------------
+// Модуль Popup.js
+// Класс Popup
+//--------------------------------------------------------------------------------------
+
 export default class Popup {
-    constructor(popupSelector) {
-        this._popup = document.querySelector(popupSelector);
-        this._handleEscClose = this._handleEscClose.bind(this)
-    }
+  constructor(popupSelector, { buttonClose, openedClass }) {
+    this._popup = document.querySelector(popupSelector);
+    this._closeButton = this._popup.querySelector(buttonClose);
+    this._openedClass = openedClass;
+    this._handleEscClose = this._handleEscClose.bind(this);
+  }
 
-    open() {
-        this._popup.classList.add('popup_opened');
-        document.addEventListener('keydown', this._handleEscClose);
-    }
+  _handleEscClose(evt) {
+    if (evt.key === 'Escape') this.close();
+  }
 
-    close() {
-        this._popup.classList.remove('popup_opened');
-        document.removeEventListener('keydown', this._handleEscClose);
-    }
+  _handleOverlayClose(evt) {
+    if (evt.target === evt.currentTarget) this.close();
+  }
 
-    _handleEscClose(event) {
-        if (event.key === 'Escape') {
-            this.close();
-        }
-    }
+  setEventListeners() {
+    this._popup.addEventListener('click', (evt) => { this._handleOverlayClose(evt); });
+    this._closeButton.addEventListener('click', () => { this.close(); });  
+  }
 
-    _handleOverlayClose(event) {
-        if (event.target === event.currentTarget) {
-            this.close();
-        }
-    }
+  open() {
+    this._popup.classList.add(this._openedClass);
+    document.addEventListener('keydown', this._handleEscClose);  
+  }
 
-    setEventListeners() {
-        this._popup.querySelector('.popup__close').addEventListener('click', (event) => this.close(event));
-        this._popup.addEventListener('mousedown', (event) => this._handleOverlayClose(event));
-    }
+  close() {
+    if (this._popup.classList.contains(this._openedClass)) {
+      this._popup.classList.remove(this._openedClass);
+      document.removeEventListener('keydown', this._handleEscClose);
+    } 
+  }
 }

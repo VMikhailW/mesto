@@ -1,22 +1,19 @@
-@import url('./__logo/header__logo.css');
+@import url(../header/__logo/header__logo.css);
 
 .header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    min-height: 74px;
-    box-sizing: border-box;
-    border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  max-width: 882px;
+  min-height: 74px;
+  border-bottom: 1px solid rgba(84, 84, 84, .7);
+  transition: .5s ease-in-out;
+
+  padding: 0;
+  padding-top: 45px;
+  margin: 0 auto;
 }
 
-@media screen and (max-width: 680px){
-    .header {
-        min-height: 65px;
-    }
-}
-
-@media screen and (max-width: 425px){
-    .header {
-        min-height: 56px;
-    }
+@media screen and (max-width: 400px) {
+  .header {
+    min-height: 56px;
+    padding-top: 28px;
+  }
 }
