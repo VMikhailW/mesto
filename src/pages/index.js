@@ -242,41 +242,31 @@ buttonChangeAvatar.addEventListener('click', () => {
 let cardsArray = [];
 let cardsList = null;
 
-api.getUserInfo()
-    .then((res) => {
+Promise.all([
+        api.getUserInfo(),
+        api.getInitialCards()
+    ])
+    .then(([res, cards]) => {
         console.log(`Информация о пользователе получена с сервера.`);
         userProfile.setUserInfo({ name: res.name, info: res.about });
         userProfile.setUserAvatar(res.avatar);
         userProfile.setUserId(res._id);
-
+        cardsArray = cards.map(item => {
+            return {
+                title: item.name,
+                link: item.link,
+                likes: item.likes,
+                owner: item.owner._id,
+                id: item._id
+            };
+        });
+        // Создание контейнера
+        cardsList = new Section({ items: cardsArray, renderer: (item) => addListItem(item) },
+            listSelector
+        );
+        // Отображение карточек
+        cardsList.renderItems();
     })
     .catch((err) => {
-        console.log(`Невозможно прочитать профиль пользователя. ${err}.`);
+        console.log(err);
     })
-    .finally(() => {
-        api.getInitialCards()
-            .then((res) => {
-                console.log(`Информация о карточках получена с сервера.`);
-                cardsArray = res.map(item => {
-                    return {
-                        title: item.name,
-                        link: item.link,
-                        likes: item.likes,
-                        owner: item.owner._id,
-                        id: item._id
-                    };
-                });
-            })
-            .catch((err) => {
-                console.log(`Невозможно получить карточки с сервера. ${err}.`);
-
-            })
-            .finally(() => {
-                // Создание контейнера
-                cardsList = new Section({ items: cardsArray, renderer: (item) => addListItem(item) },
-                    listSelector
-                );
-                // Отображение карточек
-                cardsList.renderItems();
-            });
-    });
