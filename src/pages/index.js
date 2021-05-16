@@ -10,6 +10,8 @@ import {
     popupSelectors,
     profileData,
     formData,
+    btnSubmitDelSelector,
+    btnSubmitDel,
     btnEditProfileSelector,
     btnNewCardSelector
 } from '../utils/constants.js';
@@ -44,8 +46,7 @@ const popupConfirm = new PopupWithSubmit(
     (card) => { deleteCard(card); }
 );
 
-const btnSubmitDelSelector = `${popupSelectors.confirm} ${popupForm.submitBtnSelector}`;
-const btnSubmitDel = document.querySelector(btnSubmitDelSelector);
+
 
 // Добавление карточки с фотографией в список
 const addListItem = function(item) {
@@ -73,14 +74,15 @@ const likeCard = (card) => {
     likeFunc(id)
         .then((res) => {
             card.setLikes(res.likes);
+            card.setLikeGroup(user);
         })
         .catch((err) => {
             console.log(`Невозможно ${action} лайк. Ошибка ${err}.`);
-            card.setLikes(!likeState ? [{ _id: user }] : []);
+            // card.setLikes(!likeState ? [{ _id: user }] : []);
         })
-        .finally(() => {
-            card.setLikeGroup(user);
-        });
+        // .finally(() => {
+        //card.setLikeGroup(user);
+        //});
 }
 
 // Удаление карточки
@@ -89,12 +91,13 @@ const deleteCard = (card) => {
     api.deleteCard(card.getCardId())
         .then((res) => {
             card.delete();
+            popupConfirm.close();
         })
         .catch((err) => {
             console.log(`Невозможно удалить карточку. Ошибка ${err}.`);
         })
         .finally(() => {
-            popupConfirm.close();
+            // popupConfirm.close();
             btnSubmitDel.textContent = 'Да';
         });
 }
@@ -126,12 +129,13 @@ const saveNewCard = function(item) {
                 owner: res.owner._id,
                 id: res._id
             });
+            popupNewCard.close();
         })
         .catch((err) => {
             console.log(`Невозможно сохранить карточку на сервере. Ошибка ${err}.`);
         })
         .finally(() => {
-            popupNewCard.close();
+            //   popupNewCard.close();
             btnSubmitCard.textContent = 'Создать';
         });
 }
@@ -172,12 +176,13 @@ const saveUserAvatar = function(data) {
         .then((res) => {
             userProfile.setUserAvatar(res.avatar);
             userProfile.setUserId(res._id);
+            popupChangeAvatar.close();
         })
         .catch((err) => {
             console.log(`Невозможно обновить аватар на сервере. ${err}.`);
         })
         .finally(() => {
-            popupChangeAvatar.close();
+            //   popupChangeAvatar.close();
             buttonSubmitAvatar.textContent = 'Сохранить';
         });
 }
@@ -189,12 +194,13 @@ const saveUserProfile = function(userData) {
         .then((res) => {
             userProfile.setUserInfo({ name: res.name, info: res.about });
             userProfile.setUserId(res._id);
+            popupEditProfile.close();
         })
         .catch((err) => {
             console.log(`Невозможно обновить профиль пользователя. ${err}.`);
         })
         .finally(() => {
-            popupEditProfile.close();
+            //popupEditProfile.close();
             buttonSubmitProfile.textContent = 'Сохранить';
         });
 }
@@ -226,7 +232,7 @@ buttonEditProfile.addEventListener('click', () => {
 
 buttonChangeAvatar.addEventListener('click', () => {
     const avatar = userProfile.getUserAvatar()
-    popupChangeAvatar.open({ avatar });
+    popupChangeAvatar.open({});
     formChangeAvatarValidation.setInitialState();
 });
 
@@ -242,6 +248,7 @@ api.getUserInfo()
         userProfile.setUserInfo({ name: res.name, info: res.about });
         userProfile.setUserAvatar(res.avatar);
         userProfile.setUserId(res._id);
+
     })
     .catch((err) => {
         console.log(`Невозможно прочитать профиль пользователя. ${err}.`);
@@ -262,7 +269,7 @@ api.getUserInfo()
             })
             .catch((err) => {
                 console.log(`Невозможно получить карточки с сервера. ${err}.`);
-                cardsArray = initialCards;
+
             })
             .finally(() => {
                 // Создание контейнера
