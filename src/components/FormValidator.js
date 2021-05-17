@@ -60,6 +60,7 @@ export default class FormValidator {
     setInitialState() {
         this._inputList.forEach((input) => {
             this._hideInputError(input);
+            this._toggleSubmitState();
 
         });
     }
