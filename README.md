@@ -5,6 +5,10 @@
 
 "Mesto" - это интерактивная страница, в работе применены расширенные возможности HTML и CSS, JavaScript 
 
+## Страница проекта
+
+https://vmikhailw.github.io/mesto/
+
 ### Внешние компоненты
 Для работы с проектом вам понадобятся git, NodeJS
 * [Как установить git.](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
@@ -53,6 +57,8 @@
 `npm i @babel/preset-env --save-dev`
 
 `npm i core-js@3.4.1 --save`
+
+`npm i -S core-js@2.5.7 --save`
 
 `npm install --save babel-polyfill` - *устанавливает полифилы для транспилятора*
 
